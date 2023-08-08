@@ -1,0 +1,16 @@
+body {
+    padding-top: 120px;
+    text-align: center;
+    background-image: url(../img/notepad.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#todoInput {
+    margin-top: 30px;
+}
+
+.button {
+    height: 30px;
+    width: 130px;
+}
