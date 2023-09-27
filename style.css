@@ -1,16 +1,45 @@
-body {
-    padding-top: 120px;
+
+.container {
+    display: flex;
+}
+
+#msg {
+    color: red;
+    margin-bottom: 10px;
     text-align: center;
-    background-image: url(../img/notepad.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
+    font-size: 18px;
+    font-weight: bolder;
+    font-style: oblique;
+  }
+
+input, textarea {
+    width: 90%;
+    padding: 8px;
+    font-size: 20px;
+    border: 0;
+    border: 1px solid;
+    border-radius: 10px;
+}
+button {
+    cursor: pointer;
+    width: 80%;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 12px;
+    color: white;
+    background-color: #5F9EA0;
 }
 
-#todoInput {
-    margin-top: 30px;
+.liste {
+    display: flex;
 }
-
-.button {
-    height: 30px;
-    width: 130px;
+.liste p {
+    margin: 5rem;
+}
+h2 {
+    text-align: center;
+    color: #5F9EA0;
+    font-weight: bold;
 }
