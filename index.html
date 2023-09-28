@@ -35,15 +35,25 @@
 
         <!-- partie taches -->
         <div>
-            <h2>Listes de taches</h2>
-            <div class="liste">
-                <p>#</p>
-                <p>Date</p>
-                <p>Titre</p>
-                <p>Categories</p>
-                <p>Operations</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="5" class="liste-de-taches">Liste de taches</th>
+                    </tr>
+                    <tr class="les-th">
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Titre</th>
+                        <th>Categorie</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody id="tasks"></tbody>
+            </table>
+            <div class="description">
+                <h3>Description</h3>
+                <div id="textDescription"></div>
             </div>
-            <div id="tasks"></div>
         </div>
     </div>
 

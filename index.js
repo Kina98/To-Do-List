@@ -1,4 +1,3 @@
-let tasks = document.getElementById("tasks");
 let form = document.getElementById("form");
 let msg = document.getElementById("msg");
 let categorie = document.getElementById("categorie");
@@ -6,6 +5,9 @@ let titre = document.getElementById("titre");
 let date = document.getElementById("date");
 let textarea = document.getElementById("textarea");
 let statut = document.getElementById("statut");
+
+let tasks = document.getElementById("tasks");
+let textDescription = document.getElementById("textDescription");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -42,16 +44,21 @@ let createTasks = () => {
     tasks.innerHTML = "";
     data.map((x, y) => {
       return (tasks.innerHTML += `
-      <div class="taches" id=${y}>
-            <p>${x.date}</p>
-            <p>${x.titre}</p>
-            <p>${x.categorie}</p>
+      <tr class="les-tr" id=${y}>
+            <td>1</td>
+            <td>${x.date}</td>
+            <td>${x.titre}</td>
+            <td>${x.categorie}</td>
     
-            <p class="options">
-              <i onClick= "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
-              <i onClick ="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
-            </p>
-          </div>
+            <td class="options">
+              <span class="span1"><i class="fa-regular fa-eye"></i></span>
+              <span class="span2"><i onClick= "editTask(this)" class="fa-solid fa-pen"></i></span>
+              <span class="span3"><i onClick ="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i></span>
+            </td>
+          </tr>
+      `),
+      (textDescription.innerHTML = `
+      <p id${y}>${x.textarea}
       `);
     });
   
