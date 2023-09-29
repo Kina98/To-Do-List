@@ -16,7 +16,7 @@ form.addEventListener("submit", (e) => {
 
 let formValidation = () => {
     if (categorie.value === "" || titre.value === "" || date.value === "" || textarea.value === "" || statut.value === "") {
-        msg.innerHTML = "La tâche ne peut pas être vide";
+        msg.innerHTML = "Aucune tâche ne doit être vide!";
     } else {
         msg.innerHTML = "";
 
@@ -64,3 +64,41 @@ let createTasks = () => {
   
     resetForm();
   };
+
+  // Pour effacer les champs de saisie
+  let resetForm = () => {
+    categorie.value = "";
+    titre.value = "";
+    date.value = "";
+    textarea.value = "";
+    statut.value = "";
+  }
+
+  // Fonction pour supprimer une tâche
+  let deleteTask = (e) => {
+    e.parentElement.parentElement.remove();
+  
+    data.splice(e.parentElement.parentElement.id, 1);
+  
+    localStorage.setItem("data", JSON.stringify(data));
+  };
+
+  // Fonction pour éditer les tâches
+  let editTask = (e) => {
+    let selectedTask = e.parentElement.parentElement;
+  
+    categorie.value = selectedTask.children[0].innerHTML;
+    titre.value = selectedTask.children[1].innerHTML;
+    date.value = selectedTask.children[2].innerHTML;
+    textarea.value = selectedTask.children[3].innerHTML;
+    statut.value = selectedTask.children[4].innerHTML;
+  
+    deleteTask(e);
+  };
+
+    // Obtenir des données du stockage local
+    (() => {
+        data = JSON.parse(localStorage.getItem("data")) || [];
+        console.log(data);
+        createTasks();
+      })();

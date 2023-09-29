@@ -64,8 +64,8 @@ button {
 
 table {
     font-family: arial, sans-serif;
-    width: 50rem;
-    margin-left: 5rem;
+    width: 56rem;
+    margin-left: 2rem;
     border-collapse: collapse;
 }
 
@@ -107,11 +107,11 @@ td, th {
     font-size: 20px;
     font-weight: bolder;
     margin-top: 25rem;
-    margin-left: 5rem;
+    margin-left: 2rem;
 }
 .description div {
     background-color: white;
-    width: 50rem;
+    width: 56rem;
     height: 10rem;
     border: 2px solid #5F9EA0;
     border-radius: 12px;
